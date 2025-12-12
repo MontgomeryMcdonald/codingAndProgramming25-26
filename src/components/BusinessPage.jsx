@@ -1,16 +1,19 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Footer from '../Footer'
+import Footer from './Footer'
 import Menu from './Menu'
 
 const BusinessPage = (data) => {
+
   return (
+    
     <div id={data.data.id}>
+
         <Navbar />
 
         {/* <Map /> */}
 
-        <h1>{data.businessName}</h1>
+        <h1>{data.data.businessName}</h1>
         <h3>{data.data.missionStatement}</h3>
         <p>{data.data.about}</p>2
         <p>Ratings: </p>
@@ -26,7 +29,9 @@ const BusinessPage = (data) => {
             <p>Contact Us:</p>
             <ul>
                 {data.data.contacts.map((contact) => {
+                    
                     return <li id={contact.id}>{contact.type}: {contact.contactInfo}</li>
+
                 })}
             </ul>
         </div>
@@ -34,6 +39,7 @@ const BusinessPage = (data) => {
         <Menu data={data.data.menu}/>
 
         <Footer />
+
     </div>
   )
 }
