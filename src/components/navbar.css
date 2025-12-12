@@ -49,3 +49,7 @@ a:hover{
     flex-direction: column;
     text-align: center;
 }
+#map{
+    height: 20rem;
+    width: 20rem;
+}
