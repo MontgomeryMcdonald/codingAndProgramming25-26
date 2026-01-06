@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Menu from './Menu'
+import data from './data'
 
 const BusinessPage = (data) => {
 
