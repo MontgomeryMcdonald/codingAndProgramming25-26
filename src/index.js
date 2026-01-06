@@ -9,13 +9,15 @@ import Main from './components/Main'
 import BusinessPage from './components/BusinessPage';
 import Map from './components/Map'
 import Section from './components/Section'
-
+import "leaflet/dist/leaflet.css"
+import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     
-    <Main/>
+    <Map/>
+      
 
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
