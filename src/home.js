@@ -16,11 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-    {/* <Main/> work */}
-    {/* <Section /> no work */}
-    {/* <Footer /> work */}
-    <Menu/>
+    <Section />
 
   </React.StrictMode>
 );
-
