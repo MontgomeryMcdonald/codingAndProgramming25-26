@@ -6,43 +6,48 @@ import Menu from './Menu'
 
 const BusinessPage = (data) => {
 
-  return (
     
-    <div id={data.data.id}>
+      return (
+        <div>Business</div>
+      )
+    
+//   return (
+    
+//     <div id={data.data.id}>
 
-        <Navbar />
+//         <Navbar />
 
-        {/* <Map /> */}
+//         {/* <Map /> */}
 
-        <h1>{data.data.businessName}</h1>
-        <h3>{data.data.missionStatement}</h3>
-        <p>{data.data.about}</p>2
-        <p>Ratings: </p>
-        {data.data.rating.map((val) => {
-            return <span>{val ? "star" : "nostar"}</span>
-        })}
+//         <h1>{data.data.businessName}</h1>
+//         <h3>{data.data.missionStatement}</h3>
+//         <p>{data.data.about}</p>2
+//         <p>Ratings: </p>
+//         {data.data.rating.map((val) => {
+//             return <span>{val ? "star" : "nostar"}</span>
+//         })}
 
 
-        <div>
-            <h3>Extra Information</h3>
-            <p>Address: {data.data.address}</p>
-            <p>Business Owner: {data.data.businessOwner}</p>
-            <p>Contact Us:</p>
-            <ul>
-                {data.data.contacts.map((contact) => {
+//         <div>
+//             <h3>Extra Information</h3>
+//             <p>Address: {data.data.address}</p>
+//             <p>Business Owner: {data.data.businessOwner}</p>
+//             <p>Contact Us:</p>
+//             <ul>
+//                 {data.data.contacts.map((contact) => {
                     
-                    return <li id={contact.id}>{contact.type}: {contact.contactInfo}</li>
+//                     return <li id={contact.id}>{contact.type}: {contact.contactInfo}</li>
 
-                })}
-            </ul>
-        </div>
+//                 })}
+//             </ul>
+//         </div>
 
-        <Menu data={data.data.menu}/>
+//         <Menu data={data.data.menu}/>
 
-        <Footer />
+//         <Footer />
 
-    </div>
-  )
+//     </div>
+//   )
 }
 
 export default BusinessPage

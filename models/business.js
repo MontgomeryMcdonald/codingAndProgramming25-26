@@ -28,6 +28,6 @@ const businessSchema = new mongoose.Schema(
 
 )
 
-export default mongoose.model("business", businessSchema)
+export default mongoose.model("Business", businessSchema)
 //  an enum is a schema type option that is used to restricy the values of a fiels to a predefined set
 

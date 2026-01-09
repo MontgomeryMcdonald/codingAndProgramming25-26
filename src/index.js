@@ -2,7 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-import data from './data'
+// mongoose
+  // import mongoose from 'mongoose';
+  // import Business from '../models/business' 
+  // import MenuData from '../models/menu' 
+  // import Review from '../models/review' 
+
+    // Business.create()
+
+
 
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -12,14 +20,17 @@ import BusinessPage from './components/BusinessPage';
 import Map from './components/Map'
 import Section from './components/Section'
 
+
+// mongoose.connect(process.env.MONGODB_URI)
+//         .then(()=> console.log('Database connected'))
+//         .catch ((err)=> console.error("MongoDB Connection error: ", err))
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-    {/* <Main/> work */}
-    {/* <Section /> no work */}
-    {/* <Footer /> work */}
-    <Menu/>
+    <Main/> 
+    
 
   </React.StrictMode>
 );

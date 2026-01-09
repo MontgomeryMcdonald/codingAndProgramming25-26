@@ -17,4 +17,4 @@ const menuSchema = new mongoose.Schema(
 
 )
 
-export default mongoose.model("menu", menuSchema)
+export default mongoose.model("MenuData", menuSchema)
