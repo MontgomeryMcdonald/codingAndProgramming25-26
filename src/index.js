@@ -20,6 +20,12 @@ import BusinessPage from './components/BusinessPage';
 import Map from './components/Map'
 import Section from './components/Section'
 
+const data =
+{
+
+  
+
+}
 
 // mongoose.connect(process.env.MONGODB_URI)
 //         .then(()=> console.log('Database connected'))
@@ -29,8 +35,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-    <Main/> 
-    
+    <Main data={data}/> 
 
   </React.StrictMode>
 );

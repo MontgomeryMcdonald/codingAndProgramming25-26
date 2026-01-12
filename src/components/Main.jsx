@@ -4,7 +4,9 @@ import Section from "./Section"
 import Map from "./Map"
 import Form from "./Form"
 import Home from "./Home"
+import Footer from "./Footer"
 import {useState, useEffect} from 'react'
+import './main.css'
 
 const Main = ({data, content}) => {
   
@@ -55,7 +57,7 @@ const Main = ({data, content}) => {
 
   
   return (
-    <div>
+    <main>
 
         <div className='buttonContainerMobile'>
         
@@ -66,16 +68,19 @@ const Main = ({data, content}) => {
         
         </div>
 
-        <Section data={{subHeader : "Hai :3", text: "lorem ipsum dolor sit, consecitor amet"}} />
-        <Section data={{subHeader : "Hai :3", text: "lorem ipsum dolor sit, consecitor amet", image : "./logo512.png"} } />
+        {/* <Section data={{subHeader : "Hai :3", text: "lorem ipsum dolor sit, consecitor amet"}} />
+        <Section data={{subHeader : "Hai :3", text: "lorem ipsum dolor sit, consecitor amet", image : "./logo512.png"} } /> */}
 
-      <div>
-
-        {home?<Home/>:form?<Form/>:business?<BusinessPage/>:map?<Map/>:null}
+      <div className="display">
+                                                
+        {home?<Home/>:form?<Form/>:business?<BusinessPage data={data} />:map?<Map/>:null}
 
       </div>
 
-    </div>
+
+      <Footer />
+
+    </main>
   )
 }
 
