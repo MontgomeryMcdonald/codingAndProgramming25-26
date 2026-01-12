@@ -8,13 +8,13 @@ import Footer from "./Footer"
 import {useState, useEffect} from 'react'
 import './main.css'
 
+
 const Main = ({data, content}) => {
-  
 
   const [home, setHome] = useState(false)
   const [form, setForm] = useState(false)
   const [map, setMap] = useState(false)
-  const [business, setBusiness] = useState(false)
+  const [business, setBusiness] = useState(true)
   
 
   const homeClick = () => {
@@ -64,7 +64,7 @@ const Main = ({data, content}) => {
           <button key={0} onClick={()=>{homeClick()}} >home</button >
           <button key={1} onClick={()=>{formClick()}} >form</button >
           <button key={2} onClick={()=>{mapClick()}} >map</button >
-          <button key={3} onClick={()=>{businessClick()}} >business-page</button >
+          <button key={3} onClick={()=>{businessClick()}} >business</button >
         
         </div>
 
