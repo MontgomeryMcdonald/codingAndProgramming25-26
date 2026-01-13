@@ -1,15 +1,17 @@
 import {useState} from 'react'
+import Main from './Main'
 
+// {homeClick, formClick, Main.mapClick,Main.businessClick}
 function Navbar() {
     const screenWidth = window.innerWidth
     const [hamburger, setHamburger] = useState(false)
     const navData = {
         header : "Super Cool Business",
         links: [
-            {id: "0", name : "Home", link : "/"},
-            {id: "1", name : "Form", link : "/form"},
-            {id: "2", name : "Map", link : "/map"},
-            {id: "3", name : "Business-Page", link : "/business-spotlight"},
+            {id: "0", name : "Home", link : "/", function: Main.homeClick()},
+            {id: "1", name : "Form", link : "/form", function: Main.formClick()},
+            {id: "2", name : "Map", link : "/map", function: Main.mapClick()},
+            {id: "3", name : "Business-Page", link : "/business-spotlight", function: Main.businessClick()},
         ]
     }
 
@@ -18,9 +20,10 @@ function Navbar() {
         if(hamburger){
             return(
                 <div className='buttonContainerMobile'>
-                {navData.links.map((linkObject) => {
-                    return <a key={linkObject.id} href={linkObject.link} >{linkObject.name}</a>
-                })}
+                    <a key={0} href='/' onClick={()=>{Main.homeClick()}} >home</a>
+                    <a key={1} href='/form' onClick={()=>{Main.formClick()}} >form</a>
+                    <a key={2} href='/map' onClick={()=>{Main.mapClick()}} >map</a>
+                    <a key={3} href='/Business-spotlight' onClick={()=>{Main.businessClick()}} >business-page</a>
                 </div>
             )
         }else{

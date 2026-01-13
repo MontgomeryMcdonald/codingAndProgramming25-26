@@ -1,0 +1,38 @@
+*{
+
+         margin: .3rem;
+        /* padding: .2rem; */
+        text-align: center;
+
+}
+
+main{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: oklch(92.4% 0.12 95.746);
+        position: absolute;
+        margin: 0px;
+        padding: 0px;
+        width: 100vw;
+        height: 100vh;
+        margin: 0px;
+        top: 0px;
+        left: 0px;
+
+}
+
+.display{
+
+        border: 0.5rem solid oklch(90.1% 0.076 70.697);
+        border-radius: 5rem;
+        padding: .5rem;
+        margin: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: oklch(80.8% 0.114 19.571);
+
+}

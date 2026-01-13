@@ -4,3 +4,9 @@
     border-radius: 100%;
     border: 2px black solid;
 }
+body{
+
+        background: oklch(96.2% 0.059 95.617);
+        margin: 0px;
+        padding: 0px;
+}
