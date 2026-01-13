@@ -30,12 +30,11 @@ import { data } from "./components/data"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     
-    {/* <Map/> */}
       
     <Main data={data}/> 
 
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 

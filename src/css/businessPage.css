@@ -36,3 +36,11 @@ img{
         border-radius: 100%;
 
 }
+
+.card{
+
+        border: .2rem solid black;
+        border-radius: 3rem;
+        background: oklch(70.4% 0.191 22.216);
+
+}

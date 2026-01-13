@@ -44,7 +44,7 @@ const BusinessPage = () => {
     
   return (
     
-    <div id={data.id}>
+    <div  id={data.id}>
 
         {/* <Navbar /> */}
 

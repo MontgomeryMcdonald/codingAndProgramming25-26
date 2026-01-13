@@ -1,6 +1,5 @@
 import React from 'react'
 import '../../css/businessPage.css'
-
 import { FaStar } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
 
@@ -8,11 +7,12 @@ import { CiStar } from "react-icons/ci";
 const BusinessCard = ({data}) => {
 
   return (
-    <div id={data.id}>
+    <div className='card' id={data.id}>
         <section>
           <div>
             <h2>{data.businessName}</h2>
             <h3>{data.missionStatement}</h3>
+            <h4>{data.address}</h4>
           </div>
 
           <img className="logo" src={data.logo} alt="" />
