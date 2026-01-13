@@ -9,4 +9,7 @@ body{
         background: oklch(96.2% 0.059 95.617);
         margin: 0px;
         padding: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }

@@ -1,6 +1,6 @@
 *{
 
-         margin: .3rem;
+        margin: .3rem;
         /* padding: .2rem; */
         text-align: center;
 
@@ -13,12 +13,11 @@ main{
         align-items: center;
         justify-content: center;
         background: oklch(92.4% 0.12 95.746);
-        position: absolute;
+        /* position: absolute; */
         margin: 0px;
         padding: 0px;
-        width: 100vw;
-        height: 100vh;
-        margin: 0px;
+        width: 95vw;
+        min-height: 100vh;
         top: 0px;
         left: 0px;
 

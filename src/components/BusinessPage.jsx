@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Menu from './Menu'
-import './businessPage.css'
+import '../css/businessPage.css'
 
 import { FaStar } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
@@ -60,7 +60,7 @@ const BusinessPage = () => {
             
             </div>
 
-            <img src={data.img.logo} alt="" />
+            <img src={data.logo} alt="" />
 
         </section>
 
@@ -73,7 +73,7 @@ const BusinessPage = () => {
                 })}
             </div>
 
-            <img src={data.img.img2} alt="" />
+            <img src={data.img2} alt="" />
         </section>
 
 
@@ -92,7 +92,7 @@ const BusinessPage = () => {
                 </ul>
             </div>
 
-            <img src={data.img.img3} alt="" />
+            <img src={data.img3} alt="" />
         </section>
 
         {/* <Menu data={data.menu}/> */}

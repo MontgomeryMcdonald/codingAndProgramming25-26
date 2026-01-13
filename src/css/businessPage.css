@@ -24,5 +24,15 @@ section{
 img{
 
         height: 5rem;
+        /* width: 5rem; */
+        
+
+}
+
+.logo{
+
+        height: 5rem;
+        width: 5rem;
+        border-radius: 100%;
 
 }

@@ -1,12 +1,12 @@
-import BusinessPage from "./BusinessPage"
-import Navbar from "./Navbar"
 import Section from "./Section"
 import Map from "./Map"
 import Form from "./Form"
 import Home from "./Home"
 import Footer from "./Footer"
+import BusinessCardGenerator from "./cardComponents/BusinessCardGenerator"
 import {useState, useEffect} from 'react'
-import './main.css'
+import '../css/main.css'
+
 
 
 const Main = ({data, content}) => {
@@ -73,7 +73,7 @@ const Main = ({data, content}) => {
 
       <div className="display">
                                                 
-        {home?<Home/>:form?<Form/>:business?<BusinessPage data={data} />:map?<Map/>:null}
+        {home?<Home/>:form?<Form/>:business?<BusinessCardGenerator data={data} />:map?<Map/>:null}
 
       </div>
 

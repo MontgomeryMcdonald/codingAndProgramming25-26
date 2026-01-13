@@ -1,9 +1,9 @@
 import BusinessCard from "./BusinessCard"
 
-const BusinessCardGenerator = (data) => {
+const BusinessCardGenerator = ({data}) => {
   return (
     <div>
-        {data.data.map((business) => {
+        {data.map((business) => {
             return <BusinessCard data={business}/>
         })}
     </div>

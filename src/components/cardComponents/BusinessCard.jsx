@@ -1,14 +1,39 @@
-const BusinessCard = (data) => {
+import React from 'react'
+import '../../css/businessPage.css'
+
+import { FaStar } from "react-icons/fa";
+import { CiStar } from "react-icons/ci";
+
+
+const BusinessCard = ({data}) => {
+
   return (
-    <div id={data.data.id}>
-        <h2>{data.data.businessName}</h2>
-        <h3>{data.data.missionStatement}</h3>
-        <p>{data.data.about}</p>2
-        <p>Ratings: </p>
-        {data.data.rating.map((val) => {
-            return <span>{val ? "star" : "nostar"}</span>
-        })}
-        <a href={data.data.id}>See More</a>
+    <div id={data.id}>
+        <section>
+          <div>
+            <h2>{data.businessName}</h2>
+            <h3>{data.missionStatement}</h3>
+          </div>
+
+          <img className="logo" src={data.logo} alt="" />
+          {/* <p>{data.about}</p> */}
+        </section>
+
+        <section>
+
+          <div>
+                          
+            <p>Ratings: </p>
+
+            {data.rating.sort().reverse().map((val) => {
+              return <span>{val ? <FaStar/> : <CiStar />}</span>
+            })}
+
+          </div>
+          
+          <a href={data.id}>See More</a>
+
+        </section>
     </div>
   )
 }
