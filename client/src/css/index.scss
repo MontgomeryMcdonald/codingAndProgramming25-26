@@ -1,0 +1,16 @@
+$main-color: #7b959e;
+$secondary-color: #c59aba;
+$highlight-color: #ae9ac5;
+$text-color: #e1eaee;
+
+@import './partials/_card.scss' ;
+
+
+#root{
+    background-color: $secondary-color;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
