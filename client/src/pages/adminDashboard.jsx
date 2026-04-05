@@ -40,7 +40,7 @@ const [items, setItems] = useState([])
 
   return (
     <>
-      <div className="layout bg-gradient-to-br from-blue-200 to-white dark:from-blue-400 dark:via-black dark:to-black min-h-screen dark:text-white text-black">
+      <div className="layout bg-gradient-to-br from-[#00A2D3] to-white dark:from-[#00A2D3] dark:to-black min-h-screen dark:text-[#00A9DC] text-black">
         {/* Add dark mode later */}
         <Navbar />
         <div className="banner">

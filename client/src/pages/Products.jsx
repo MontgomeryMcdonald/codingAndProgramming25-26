@@ -37,14 +37,14 @@ const Products = () => {
 
     console.log(business)
     return(
-        <div className='product layout bg-gradient-to-br from-blue-200 to-white dark:from-blue-400 dark:via-black dark:to-black min-h-screen'> 
+        <div className='product layout bg-gradient-to-br from-[#00A2D3] to-white dark:from-[#00A2D3] dark:to-black min-h-screen dark:text-[#00A9DC] text-black'> 
         <Navbar/>
 
             <form onSubmit={e => e.preventDefault()} className=' bg-[background-color: rgba(0, 0, 0, 0)] rounded-sm p-3'>
-                <div className="product searchbar border-3 rounded-2xl p-3 m-2 mb-3 shadow-lg text-center dark:bg-gray-800 bg-white">
-                    <input placeholder='search' value={search} onChange={handleSearch} className='search dark:bg-blue-900 dark:text-white ' />
+                <div className="product searchbar border-none rounded-2xl p-3 m-2 mb-3 shadow-lg text-center dark:bg-[#00394B] bg-white">
+                    <input placeholder='search' value={search} onChange={handleSearch} className='search dark:bg-[#00A2D3] dark:text-[#00394B] ' />
 
-                <select name="sort" onChange={handleFilter} className='filter dark:bg-blue-900 dark:text-white' >
+                <select name="sort" onChange={handleFilter} className='filter dark:bg-[#00A2D3] dark:text-black' >
                     <option value="">None</option>
                     <option value="Food">Food</option>
                     <option value="Art-Supply">Art Supply</option>

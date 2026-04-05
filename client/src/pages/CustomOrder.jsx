@@ -86,9 +86,9 @@ const Order = () => {
         
 
     return (
-        <div id="container" className='bg-gradient-to-br from-blue-200 to-white dark:from-blue-400 dark:via-black dark:to-black dark:text-white text-black'>
+        <div id="container" className='bg-gradient-to-br from-[#00A2D3] to-white dark:from-[#00A2D3] dark:to-black min-h-screen dark:text-[#00A9DC] text-black'>
             <Navbar/>
-            <form className ='form dark:bg-gray-800 bg-white mt-6' onSubmit={handleSubmit}>
+            <form className ='form dark:bg-[#00394B] bg-white mt-6' onSubmit={handleSubmit}>
                 <h1 id="header">Add A Small Business</h1>
                 <label htmlFor="name">Business Name:</label>
                     <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} disabled={loading} required/>

@@ -26,21 +26,21 @@ const [items, setItems] = useState([])
 
   return (
     <>
-      <div className="layout bg-gradient-to-br from-blue-200 to-white dark:from-blue-400 dark:via-black dark:to-black min-h-screen dark:text-white text-black">
+      <div className="layout bg-gradient-to-br from-[#00A2D3] to-white dark:from-[#00A2D3] dark:to-black min-h-screen dark:text-[#00A9DC] text-black">
         {/* Add dark mode later */}
         <Navbar />
-        <div className="banner">
+        <div className="banner bg-[#00536D]">
           <Grid />
           <div
             className="sub-info-one sub-info"
             style={{
-              backgroundColor: "hsl(221, 83%, 53%)",
+              backgroundColor: "#006D8F",
               color: "hsl(210, 40%, 98%)",
             }}
           >
             Businesses: 15
           </div>
-          <div className="sub-info sub-info-two dark:text-black">User Count: 97</div>
+          <div className="sub-info sub-info-two dark:text-black ">User Count: 97</div>
           <div className="sub-info sub-info-three dark:text-black">Testimonial Average: 4.7 Stars</div>
           <h1 className="banner-head">
             all the greatest {" "}
@@ -54,11 +54,11 @@ const [items, setItems] = useState([])
             and leave a testimonial. Everything here is built by locals
           </p>
           <NavLink className="shop-products" to={'/products'}>
-            <p>view all businesses</p> <FaArrowRight></FaArrowRight>
+            <p>View All Businesses</p> <FaArrowRight></FaArrowRight>
           </NavLink>
-          <NavLink className="shop-custom dark:text-black" to={'/custom-order'}>
+          <NavLink className="shop-custom dark:text-black " to={'/custom-order'}>
             {" "}
-            <p>Add a business</p> <FaWandMagicSparkles />
+            <p>Add a Business</p> <FaWandMagicSparkles />
           </NavLink>
 
           <div className="info-blurb info-blurb-one">

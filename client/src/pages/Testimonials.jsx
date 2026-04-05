@@ -20,9 +20,9 @@ const Testimonials = () => {
     return (
         <>
         
-        <div className='product layout bg-gradient-to-br from-blue-200 to-white dark:from-blue-400 dark:via-black dark:to-black dark:text-white text-black'>
+        <div className='product h-screen layout bg-gradient-to-br from-[#00A2D3] to-white dark:from-[#00A2D3] dark:to-black min-h-screen dark:text-[#00A9DC] text-black'>
             <Navbar/>
-            <h2>Testimonials</h2>
+            <h2 className='dark:text-[#00A9DC]'>Testimonials</h2>
             <div className="testimonial-container">
             {items.map((testimonial) => (
                 <div key={testimonial._id} className='testimonials-all dark:bg-gray-800 bg-white'>

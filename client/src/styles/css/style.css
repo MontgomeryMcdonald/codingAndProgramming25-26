@@ -55,19 +55,23 @@ justify-content: space-around;
 }
 
 .nav-custom{
+  display: flex;
+  justify-content: center;
   color: hsl(210, 40%, 98%);
-  background-color: hsl(221, 83%, 53%);
+  background-color: #006D8F;
   font-family: 'IBM plex sans';
   font-weight: 500;
   text-align: center;
+  align-items: center;
   width: 50%;
   border-radius: 1rem;
-  height: 55%;
+  height: 60%;
 }
 
 .nav-products{
   font-family: 'IBM plex sans';
   font-weight: 500;
+  margin-top: .8rem;
   width: 45%;
   height: 55%;
 }
@@ -92,7 +96,7 @@ justify-content: space-around;
   width: 12%;
   height: 55%;
   border-radius: 2rem;
-  background-color: hsl(221, 83%, 53%);
+  background-color: #006D8F;
 }
 
 .nav-sub{
@@ -107,7 +111,7 @@ justify-content: space-around;
   border-radius: 2rem;
   display: grid;
   border: solid .09rem black;
-  background: #333;
+  background: #00394B;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   background: radial-gradient(100rem circle at 20% 10%, 
@@ -120,14 +124,14 @@ justify-content: space-around;
 
 .sub-info{
   height: 50%;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  box-shadow: rgba(16, 1, 59, 0.02) 0px 1px 3px 0px, rgba(0, 26, 51, 0.15) 0px 0px 0px 1px;
   border-radius: .75rem;
   text-align: center;
   font-weight: 500;
   grid-row-start: 1;
   align-self: center;
   justify-self: start;
-  background-color: white;
+  background-color: #00A9DC;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,7 +190,7 @@ justify-content: space-around;
   height: 80%;
   grid-row-start: 7;
   grid-column: 6/11;
-  background-color: white;
+  background-color: #00A9DC;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   display: flex;
   flex-direction: row;
@@ -198,7 +202,7 @@ justify-content: space-around;
   justify-self: center;
   font-family: 'IBM plex sans';
   font-weight: 500;  
-  background-color: hsl(210, 36%, 96%);
+
 
 }
 
@@ -215,7 +219,7 @@ shop.custom{
   height: 80%;
   grid-row-start: 7;
   grid-column: 1/6;
-  background-color: hsl(221, 83%, 53%);
+  background-color: #006D8F;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -438,7 +442,7 @@ shop.custom{
 }
 
 .in-stock{
-  background-color: hsl(221, 83%, 53%);
+  background-color: #006D8F;
   color: white;
   font-weight: 600;
 }
@@ -681,9 +685,7 @@ footer > *{
 }
 
 
-.sub-info:hover{
-  background-color: #ccc;
-}
+
 
 .sub-info-one:hover{
   background-color: aquamarine;

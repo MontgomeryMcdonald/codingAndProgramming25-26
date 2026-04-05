@@ -41,7 +41,7 @@ const Detail = () =>{
     if (!product) return <div>business not found</div>
 
     return (
-        <div className="product layout bg-gradient-to-br from-blue-200 to-white dark:from-blue-400 dark:via-black dark:to-black dark:text-white text-black h-screen">
+        <div className="product layout bg-gradient-to-br from-[#00A2D3] to-white dark:from-[#00A2D3] dark:to-black min-h-screen dark:text-[#00A9DC] text-black">
             <Navbar/>
             {/* <div className="product-image">
                 <img src={product.image} alt={product.name}/>

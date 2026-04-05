@@ -43,7 +43,7 @@
 .form button{
     width: 100%;
     padding: 1rem;
-    background-color: hsl(221, 83%, 53%);
+    background-color: #006D8F;
     color: hsl(210, 40%, 98%);
     border: none;
     border-radius: 0.75rem;
@@ -60,5 +60,5 @@ button:disabled{
 }
 
 .form button:hover{
-    background-color: hsl(221, 83%, 45%);
+    background-color: #015067;
 }

@@ -68,7 +68,7 @@ const SignUp = () =>{
     }
 
     return (
-        <div id="container" className="container">
+        <div id="container" className="container bg-gradient-to-br from-[#00A2D3] to-white dark:from-[#00A2D3] dark:to-black min-h-screen dark:text-[#00A9DC] text-black">
             <Navbar/>
             <form className='form' onSubmit={handleSubmit}>
                 <h1 id="header">Login</h1>
@@ -83,7 +83,7 @@ const SignUp = () =>{
                 <label htmlFor="confirmPassword">Confirm Password:</label>
                     <input type="password" name="confirmPassword" placeholder="Confirm Password" value={form.confirmPassword} onChange={handleChange} disabled={loading} required/>
 
-                <button type="submit" disabled={loading}>
+                <button type="submit" disabled={loading} className='dark:bg-[#006D8F]'>
                     {loading ? "Signing Up...": "Sign Up"}
                 </button>
 
