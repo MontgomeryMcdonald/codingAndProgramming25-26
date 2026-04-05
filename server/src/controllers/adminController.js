@@ -11,9 +11,7 @@
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
-const CustomOrder = require('../models/CustomOrder')
-const Product = require('../models/Product')
-
+const Business = require('../models/BusinessSchema')
 function signToken(user){
     //JWT best practices: use 'sub' for subject (user id)
     return jwt.sign(
@@ -35,7 +33,7 @@ async function getAllUsers(req, res, next){
 }
 
 //DELETE /api/admin/users/:id
-//Also deletes that user's courses
+//Deletes the user and any businesses they own/run
 async function deleteUser(req,res,next){
     try {
         const targetId = req.params.id
@@ -44,10 +42,13 @@ async function deleteUser(req,res,next){
             return res.status(400).json({error:"You cannot delete your own admin account"})
         }
 
+        // deletes the user with the given ID and returns its contents
         const deletedUser = await User.findByIdAndDelete(targetId)
         if(!deletedUser){
+            // runs if the deleted user is null, which means nobody was deleted -- there is no user of targetID
             return res.status(404).json({error:"User Not Found"})
         }
+        // deletes all businesses the user owns
         await CustomOrder.deleteMany({owner: targetId})
         res.json({data:{deletedUser:targetId}})
     } catch (error) {
@@ -55,27 +56,13 @@ async function deleteUser(req,res,next){
     }
 }
 
+
+
+
+
 //GET /api/admin/courses
 //Include populate for owner, name email role
 //Sort data ascending order
-async function getAllProducts(req,res,next){
-    try {
-        const courses = await Product.find().populate('owner',"name email role").sort({createdAt: -1});
-        res.json({data:courses});
-    } catch (error) {
-        next(error)
-    }
-}
-async function deleteProductAsAdmin(req,res,next) {
-    try {
-        const deleted = await Product.findByIdAndDelete(req.params.id)
-        if(!deleted) return res.status(404).json({error:"Course not found"})
-
-        res.json({data:deleted})
-    } catch (err) {
-        next(err)
-    }
-}
 
 //Change this to work for our things
-module.exports = {deleteProductAsAdmin, getAllProducts, deleteUser, getAllUsers}
+module.exports = {deleteUser, getAllUsers}

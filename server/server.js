@@ -15,12 +15,27 @@ const { connect } = require("mongoose")
 const app = express()
 
 // Middleware
-app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin', 'Access-Control-Allow-Origin', 'Access-Control-Allow-Methods', 'Access-Control-Allow-Headers', 'Access-Control-Allow-Credentials'],
-    credentials: true
-}))
+const allowedOrigins = [
+  process.env.CLIENT_URL,       
+  "http://localhost:3000",
+  "http://192.168.1.168:3000"
+].filter(Boolean);
+
+const corsOptions = {
+    origin: (origin, callback) => {
+        // Allow server-to-server requests
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true)
+        } else {
+            callback(new Error(`CORS: origin ${origin} not allowed`))
+        }
+    },
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, 
+}
+
+app.use(cors(corsOptions))
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true})) // Parses Form data for login if needed

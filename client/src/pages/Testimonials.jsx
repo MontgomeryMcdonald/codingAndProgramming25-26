@@ -23,6 +23,7 @@ const Testimonials = () => {
         <div className='product layout bg-gradient-to-br from-blue-200 to-white dark:from-blue-400 dark:via-black dark:to-black dark:text-white text-black'>
             <Navbar/>
             <h2>Testimonials</h2>
+            <div className="testimonial-container">
             {items.map((testimonial) => (
                 <div key={testimonial._id} className='testimonials-all dark:bg-gray-800 bg-white'>
                     <p><strong>{testimonial.name}</strong></p>
@@ -30,6 +31,7 @@ const Testimonials = () => {
                     <p>{testimonial.message}</p>
                 </div>
             ))}
+            </div>
         </div>
         </>
         

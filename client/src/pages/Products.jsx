@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react'
-import List from '../components/List'
 import {NavLink} from "react-router-dom";
-import Navbar from "../components/Navbar";
+import SingleProduct from '../components/SingleProduct'
+import Navbar from "../components/Navbar"
+import { CiSearch } from "react-icons/ci";
 
 const Products = () => {
 
@@ -23,38 +24,53 @@ const Products = () => {
     async function stuff() {
 
         // prevent destroy
-        const result = await fetch('http://localhost:5000/api/public/products')
+        const result = await fetch('http://localhost:5000/api/public/business/')
         var revised = await result.json()
-        setItems(revised)
-        console.log(items)
+        setItems(revised.data)
     }
     
-
+    
     useEffect(() => {
         stuff()
     }, [])
     
-
+    
+    console.log(items)
     return(
         <div className='product layout bg-gradient-to-br from-blue-200 to-white dark:from-blue-400 dark:via-black dark:to-black min-h-screen'> 
         <Navbar/>
 
             <form onSubmit={e => e.preventDefault()} className=' bg-[background-color: rgba(0, 0, 0, 0)] rounded-sm p-3'>
-                
-                <input placeholder='search' value={search} onChange={handleSearch} className='search dark:bg-blue-900 dark:text-white ' />
+                <div className="product searchbar border-3 rounded-2xl p-3 m-2 mb-3 shadow-lg text-center dark:bg-gray-800 bg-white">
+                    <input placeholder='search' value={search} onChange={handleSearch} className='search dark:bg-blue-900 dark:text-white ' />
 
                 <select name="sort" onChange={handleFilter} className='filter dark:bg-blue-900 dark:text-white' >
-                    <option value="">none</option>
-                    <option value="miniatures">miniatures</option>
-                    <option value="prototypes">prototypes</option>
-                    <option value="functional-parts">functional parts</option>
-                    <option value="decorative">decorative</option>
-                    <option value="toys">toys</option>
-                    <option value="organizers">organizers</option>
+                    <option value="">None</option>
+                    <option value="Food">Food</option>
+                    <option value="Art-Supply">Art Supply</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Services">Services</option>
+                    <option value="Trades">Trades</option>
+                    <option value="Miscellaneous">Miscellaneous</option>
                 </select>
+                </div>
                                                 
                 {/* send inportant info into the list */}
-                <List products={items} search={search} filters={filter}/>
+                <div className='product-column bg-[background-color: rgba(0, 0, 0, 0)] min-h-screen max-w-170 p-2 '>
+                     
+                     {/* use regex to filter throug all the products based on the users requests */}
+                        {items.filter((product)=> product.name.match(new RegExp(search, 'i')) !== null && product.category.match(new RegExp(filter, 'i')) !== null).map((product)=>{
+                                
+                                return ( <SingleProduct
+                                            
+                                        key={product._id} 
+                                        product = {product}
+
+                                />)
+
+                        })}
+                        
+                </div>
 
             </form>
                 

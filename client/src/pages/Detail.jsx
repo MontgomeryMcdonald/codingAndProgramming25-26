@@ -16,7 +16,7 @@ const Detail = () =>{
             try{
 
                 // get the product based on ID -- it errors if you remove the http://localhost:5000
-                const response = await fetch(`http://localhost:5000/api/public/products/${id}`)
+                const response = await fetch(`http://localhost:5000/api/public/business/`)
                 const data = await response.json()
                 // use state the data
                 setProduct(data)
@@ -38,25 +38,27 @@ const Detail = () =>{
     if (loading) return <div>Loading...</div>
 
     // error message
-    if (!product) return <div>Product not found</div>
+    if (!product) return <div>business not found</div>
 
     return (
         <div className="product layout bg-gradient-to-br from-blue-200 to-white dark:from-blue-400 dark:via-black dark:to-black dark:text-white text-black h-screen">
             <Navbar/>
-            <div className="product-image">
+            {/* <div className="product-image">
                 <img src={product.image} alt={product.name}/>
-            </div>
+            </div> */}
             <div className="product-info flex flex-col items-center border-1 border-black rounded-2xl p-3 m-2 mb-3 shadow-lg text-center dark:bg-gray-800 bg-white dark:text-white text-black gap-3">
-                <h1>{product.name}</h1>
-                <p className="price">${product.price}</p>
+                <h1>names: {product.name}</h1>
+                <h3>phone: {product.phone}</h3>
+                {/* <p className="price">${product.price}</p> */}
                 <p className="category">Category: {product.category}</p>
-                <div className="tags">
-                    {product.tags ?.map(tag => <span key={tag}>{tag}</span>)}
-                </div>
-                <div className="stock-status">
-                    {/* change html based on supply of the product */}
-                    {product.inStock ? <span className="">In Stock</span> : <span className="">Out of Stock</span>}
-                </div>
+                <p>address: {product.address}</p>
+                <div>
+                    <h3>hours</h3>
+                    {product.hours}
+                </div>           
+                <p>{product.description}</p>    
+                <p>Rating: {'⭐'.repeat(product.rating)}</p>
+
             </div>
         </div>
     )

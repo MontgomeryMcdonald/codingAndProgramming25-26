@@ -8,19 +8,20 @@ export default function Navbar(){
     return (
     <div className="nav dark:bg-gray-800">
          <div className="nav-info">
-            <div className="placeholder-logo"></div>
+            <div className="placeholder-logo"><img src="../img/Local.png" alt="" /></div>
             <div className="blurb">
-                <h3 className='nav-head text-black dark:text-white'>West-MEC</h3>
-            <sub className='nav-sub'>Student Print Shop</sub>
+                <h3 className='nav-head text-black dark:text-white'>ParaLocal</h3>
+            <sub className='nav-sub'>West-mec</sub>
             </div>
             
         </div>   
 
         <div className="nav-interaction dark:text-white text-black">
             <NavLink className='nav-products' to={'/'}>Home</NavLink>
-            <NavLink className='nav-products' to={'/products'}>Products</NavLink>
+            <NavLink className='nav-products' to={'/sign-up'}>sign-in</NavLink>
+            <NavLink className='nav-products' to={'/products'}>business</NavLink>
             <NavLink className='nav-products' to={'/testimonials'}>Testimonials</NavLink>
-            <NavLink className="nav-custom" to={'/custom-order'}>Custom Print</NavLink>
+            <NavLink className="nav-custom" to={'/custom-order'}>add a business</NavLink>
         </div>
     </div>
         
