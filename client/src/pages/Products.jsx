@@ -6,9 +6,22 @@ import { CiSearch } from "react-icons/ci";
 
 const Products = () => {
 
-    const [search, setSearch] = useState('')
+    const [business, setBusiness] = useState([])
+    
+    async function fetchBusinesses() { // async to give it time to catch up
+
+        const result = await fetch('http://localhost:5000/api/public/business/')// grabing the data from the data base
+        var revised = await result.json()
+        setBusiness(revised.data)// secure the data as a const
+
+    }
+    
+    useEffect(() => {
+        fetchBusinesses() // call the function at start up
+    }, [])
+    
     const [filter, setFilter] = useState([])
-    const [items, setItems] = useState([])
+    const [search, setSearch] = useState('')
 
     const handleSearch = (e) => {
 
@@ -21,21 +34,8 @@ const Products = () => {
         setFilter(e.target.value)
 
     }
-    async function stuff() {
 
-        // prevent destroy
-        const result = await fetch('http://localhost:5000/api/public/business/')
-        var revised = await result.json()
-        setItems(revised.data)
-    }
-    
-    
-    useEffect(() => {
-        stuff()
-    }, [])
-    
-    
-    console.log(items)
+    console.log(business)
     return(
         <div className='product layout bg-gradient-to-br from-blue-200 to-white dark:from-blue-400 dark:via-black dark:to-black min-h-screen'> 
         <Navbar/>
@@ -59,7 +59,7 @@ const Products = () => {
                 <div className='product-column bg-[background-color: rgba(0, 0, 0, 0)] min-h-screen max-w-170 p-2 '>
                      
                      {/* use regex to filter throug all the products based on the users requests */}
-                        {items.filter((product)=> product.name.match(new RegExp(search, 'i')) !== null && product.category.match(new RegExp(filter, 'i')) !== null).map((product)=>{
+                        {business.filter((product)=> product.name.match(new RegExp(search, 'i')) !== null && product.category.match(new RegExp(filter, 'i')) !== null).map((product)=>{
                                 
                                 return ( <SingleProduct
                                             
