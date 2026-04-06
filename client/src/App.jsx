@@ -10,6 +10,7 @@ import Order from './pages/CustomOrder.jsx'
 import Detail from './pages/Detail.jsx'
 import SignUp from './pages/SignUp.jsx'
 import Admin from './pages/adminDashboard.jsx'
+import CreateTestimonial from './pages/CreateTestimonial.jsx'
 import './styles/css/style.css'
 
 // get data
@@ -28,6 +29,7 @@ const App = () => {
             <Route path='/products' element={<Products/>}/>
             <Route path='/testimonials' element={<Testimonials/>}/>
             <Route path='/custom-order' element={<Order/>}/>
+            <Route path='/create-a-testimonials' element={<CreateTestimonial/>}/>
             
             <Route path="/products/:id" element={<Detail/>} />
 

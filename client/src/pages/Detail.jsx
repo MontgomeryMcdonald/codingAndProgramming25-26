@@ -1,5 +1,6 @@
 import {useParams} from 'react-router'
 import {useState, useEffect} from 'react'
+import {NavLink} from "react-router-dom";
 import Navbar from '../components/Navbar'
 
 const Detail = () =>{
@@ -16,10 +17,11 @@ const Detail = () =>{
             try{
 
                 // get the product based on ID -- it errors if you remove the http://localhost:5000
-                const response = await fetch(`http://localhost:5000/api/public/business/`)
+                const response = await fetch(`http://localhost:5000/api/public/business/${id}`)
                 const data = await response.json()
                 // use state the data
-                setProduct(data)
+                setProduct(data.data)
+                console.log(data.data)
                 
             }catch(err){
                 console.error('Error fetching product:', err)
@@ -57,7 +59,13 @@ const Detail = () =>{
                     {product.hours}
                 </div>           
                 <p>{product.description}</p>    
-                <p>Rating: {'⭐'.repeat(product.rating)}</p>
+                <p>Rating: {'⭐'.repeat(product.ratings)}</p>
+
+                <NavLink className='nav-products' to={'/create-a-testimonials'}>
+                    <button>
+                        Add a testimonial
+                    </button>
+                </NavLink>
 
             </div>
         </div>
